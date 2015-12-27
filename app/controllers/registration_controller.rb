@@ -1,6 +1,7 @@
 class RegistrationController < ApplicationController
   def index
-    puts params[:question]
-    puts params[:token]
+    p "123"
+    p params[:question]
+    p params[:token]
   end
 end
