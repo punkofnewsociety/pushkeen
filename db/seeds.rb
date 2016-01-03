@@ -8,7 +8,9 @@
 
 require 'json'
 
-file = open('/home/zhela/RubymineProjects/pushkeen/db/poems-used.json').read
+
+path = File.expand_path("..", __FILE__)
+file = open(path+'/poems-used.json').read
 json = JSON.parse(file)
 
 class Poem
@@ -17,14 +19,9 @@ end
 
 poems = []
 json.each do |title, poem|
- # stih = Poem.new
- # stih.title = title
- # stih.poem = poem
- # poems << stih
+  allpoem=poem.join("\n");
   Title.create(name: title)
+  Str.create(titleid: Title.last.id, text: allpoem)
   
-  poem.each do |poem|
-  Str.create(titleid: Title.last.id,text: poem)
-  end
 end
 

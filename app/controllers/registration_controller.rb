@@ -19,4 +19,4 @@ class RegistrationController < ApplicationController
   p.text.gsub(/#{st[0]}(.*?)#{st[1]}/){@answer = $1.strip}
   render json: {answer: @answer} 
   end
-end
+end     
