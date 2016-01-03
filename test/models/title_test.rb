@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class PoemTest < ActiveSupport::TestCase
+class TitleTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
