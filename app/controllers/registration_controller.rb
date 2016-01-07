@@ -18,7 +18,7 @@ class RegistrationController < ApplicationController
   render json: {answer: @answer} 
   end
   
-  def play(params[:level])
+  def play
   
   @question = params[:question]
   @id = params[:id]
