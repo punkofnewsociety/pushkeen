@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'welcome#index'
+  post '/quiz' => 'registration#play'
   get '/registration' =>  'registration#index'
   post '/registration' =>  'registration#new'
   # The priority is based upon order of creation: first created -> highest priority.
