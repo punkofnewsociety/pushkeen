@@ -26,7 +26,7 @@ class RegistrationController < ApplicationController
   render nothing:true
   puts @question
   @answer = Title.find_by_id(Str.find_by("text LIKE ?", "%#{@question}%").titleid).name
-  
+  puts @answer
   uri = URI("http://pushkin-contest.ror.by/quiz")
   parameters = {
     answer: @answer,
