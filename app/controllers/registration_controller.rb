@@ -29,7 +29,7 @@ class RegistrationController < ApplicationController
   when 1
     first(@question)
   when 2
-   # second(@question)
+    puts "HHHHHHHHHHTTTTTTTTTTIIIIII"
   end
   puts @question
   
@@ -45,8 +45,8 @@ class RegistrationController < ApplicationController
   Net::HTTP.post_form(uri, parameters)
   end
   
-  def first(:question)
-    @answer = Title.find_by_id(Str.find_by("text LIKE ?", "%#{:question}%").titleid).name
+  def first
+    @answer = Title.find_by_id(Str.find_by("text LIKE ?", "%#{@question}%").titleid).name
   end
   
 end     
