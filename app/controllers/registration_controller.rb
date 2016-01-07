@@ -27,7 +27,7 @@ class RegistrationController < ApplicationController
   
   case @level
   when 1
-    first(@question)
+    self.first
   when 2
     puts "HHHHHHHHHHTTTTTTTTTTIIIIII"
   end
