@@ -19,7 +19,7 @@ end
 
 poems = []
 json.each do |title, poem|
-  allpoem=poem.join("\n");
+  allpoem=poem.join(" ");
   Title.create(name: title)
   Str.create(titleid: Title.last.id, text: allpoem)
   

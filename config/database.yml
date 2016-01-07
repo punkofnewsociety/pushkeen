@@ -11,6 +11,8 @@ development:
 
 production:
   <<: *default
-  database: poems
-  login: zhela
-  password: 10side
+  host: ec2-107-22-170-249.compute-1.amazonaws.com
+  port: 5432
+  database: dejm35d897epel
+  login: xstnhgqlhsrivg
+  password: GmLO36uPeQdZOZDst63Zy4SZOo
