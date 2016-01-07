@@ -18,15 +18,23 @@ class RegistrationController < ApplicationController
   render json: {answer: @answer} 
   end
   
-  def play
+  def play(params[:level])
   
   @question = params[:question]
   @id = params[:id]
   @level = params[:level]
   render nothing:true
+  
+  case @level
+  when 1
+    first(@question)
+  when 2
+    second(@question)
+  end
   puts @question
-  @answer = Title.find_by_id(Str.find_by("text LIKE ?", "%#{@question}%").titleid).name
+  
   puts @answer
+  
   uri = URI("http://pushkin-contest.ror.by/quiz")
   parameters = {
     answer: @answer,
@@ -35,7 +43,10 @@ class RegistrationController < ApplicationController
   }
   
   Net::HTTP.post_form(uri, parameters)
+  end
   
+  def first(:level)
+    @answer = Title.find_by_id(Str.find_by("text LIKE ?", "%#{@question}%").titleid).name
   end
   
 end     
