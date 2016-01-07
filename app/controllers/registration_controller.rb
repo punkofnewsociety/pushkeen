@@ -13,15 +13,14 @@ class RegistrationController < ApplicationController
   $taken=@token
   puts @question
   st = @question.split(' %WORD% ')
-  puts st[0]
-  puts st[1]
-  puts st[2]
-  
- 
- 
   p = Str.find_by("text LIKE ?", "%#{st[0]}%" "%#{st[1]}%").text.gsub(/#{st[0]}(.*?)#{st[1]}/){@answer = $1.strip}
-  
- # p.text.gsub(/#{st[0]}(.*?)#{st[1]}/){@answer = $1.strip}
   render json: {answer: @answer} 
   end
+  
+  def play
+  
+  
+  
+  end
+  
 end     
