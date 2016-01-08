@@ -30,6 +30,8 @@ class RegistrationController < ApplicationController
     self.second
   when '3'
     self.third
+  when '4'
+    self.fourth
   end
     
   puts @question
@@ -57,7 +59,6 @@ class RegistrationController < ApplicationController
   
   def third
     ch = @question.split('\n')
-    st = ch[0].to_s.split(' %WORD% ')
     @question=ch[0]
     self.second
     firstword=@answer
@@ -67,4 +68,19 @@ class RegistrationController < ApplicationController
     @answer=firstword+','+secondword
 
   end
+  
+  def fourth
+    ch = @question.split('\n')
+    @question=ch[0]
+    self.second
+    firstword=@answer
+    @question=ch[1]
+    self.second
+    secondword=@answer
+    @question=ch[2]
+    self.second
+    thirdword=@answer
+    @answer=firstword+','+secondword+','+thirdword
+  end
+  
 end     
