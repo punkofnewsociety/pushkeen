@@ -33,6 +33,8 @@ class RegistrationController < ApplicationController
   when '4'
     self.fourth
   end
+  puts @question
+  puts @answer
   uri = URI("http://pushkin-contest.ror.by/quiz")
   parameters = {
     answer: @answer,
