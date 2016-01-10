@@ -24,13 +24,13 @@ class RegistrationController < ApplicationController
   render nothing:true
   
   case @level
-  when '1'
+  when 1
     self.first
-  when '2'
+  when 2
     self.second
-  when '3'
+  when 3
     self.third
-  when '4'
+  when 4
     self.fourth
   end
   puts @question
