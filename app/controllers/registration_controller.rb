@@ -44,8 +44,8 @@ class RegistrationController < ApplicationController
     token: 'dc574bf8a22d1adceb04e8f6c4fefc5d',
     task_id:  @id
   }
-  render json: {answer: @answer} 
-  #Net::HTTP.post_form(uri, parameters)
+  #render json: {answer: @answer} 
+  Net::HTTP.post_form(uri, parameters)
   end
   
   def first
@@ -65,7 +65,7 @@ class RegistrationController < ApplicationController
     @question=ch[1]
     self.second
     secondword=@answer
-    @answer=firstword+','+secondword
+    @answer=firstword+', '+secondword
 
   end
   
@@ -80,7 +80,7 @@ class RegistrationController < ApplicationController
     @question=ch[2]
     self.second
     thirdword=@answer
-    @answer=firstword+','+secondword+','+thirdword
+    @answer=firstword+', '+secondword+', '+thirdword
   end
   
 end     
