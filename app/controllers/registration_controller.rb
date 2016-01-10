@@ -37,13 +37,13 @@ class RegistrationController < ApplicationController
   puts @answer
   uri = URI("http://pushkin-contest.ror.by/quiz")
   
-  parameters = {
+  poparameters = {
     answer: '@answer',
     token: 'dc574bf8a22d1adceb04e8f6c4fefc5d',
     task_id:  '@id'
   }
   #render json: {answer: @answer} 
-  Net::HTTP.post_form(uri, parameters)
+  Net::HTTP.post_form(uri, poparameters)
   end
   
   def first
