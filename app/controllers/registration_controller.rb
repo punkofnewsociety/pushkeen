@@ -24,26 +24,26 @@ class RegistrationController < ApplicationController
   #render nothing:true
   
   case @level
-  when '1'
+  when 1
     self.first
-  when '2'
+  when 2
     self.second
-  when '3'
+  when 3
     self.third
-  when '4'
+  when 4
     self.fourth
   end
   puts @question
   puts @answer
-  #uri = URI("http://pushkin-contest.ror.by/quiz")
+  uri = URI("http://pushkin-contest.ror.by/quiz")
   
   parameters = {
     answer: @answer,
     token: 'dc574bf8a22d1adceb04e8f6c4fefc5d',
     task_id:  @id
   }
-  render json: {answer: @answer} 
-  #Net::HTTP.post_form(uri, parameters)
+  #render json: {answer: @answer} 
+  Net::HTTP.post_form(uri, parameters)
   end
   
   def first
