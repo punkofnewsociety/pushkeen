@@ -1,4 +1,4 @@
-require 'net//http'
+require 'net/http'
 class RegistrationController < ApplicationController
   skip_before_filter  :verify_authenticity_token
   $taken = 0
@@ -38,9 +38,9 @@ class RegistrationController < ApplicationController
   uri = URI("http://pushkin-contest.ror.by/quiz")
   
   parameters = {
-    answer: @answer,
+    answer: '@answer',
     token: 'dc574bf8a22d1adceb04e8f6c4fefc5d',
-    task_id:  @id
+    task_id:  '@id'
   }
   #render json: {answer: @answer} 
   Net::HTTP.post_form(uri, parameters)
