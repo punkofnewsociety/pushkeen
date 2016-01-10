@@ -21,7 +21,7 @@ class RegistrationController < ApplicationController
   @question = params[:question]
   @id = params[:id]
   @level = params[:level]
-  #render nothing:true
+  render nothing:true
   
   case @level
   when '1'
