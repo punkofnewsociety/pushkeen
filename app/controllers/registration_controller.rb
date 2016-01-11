@@ -1,3 +1,4 @@
+require 'uri'
 require 'net/http'
 class RegistrationController < ApplicationController
   skip_before_filter  :verify_authenticity_token
@@ -35,8 +36,8 @@ class RegistrationController < ApplicationController
   end
   puts @question
   puts @answer
-  uri = URI("http://pushkin-contest.ror.by/quiz")
-  
+  uri = URI("http://pushkin.rubyroid.by/quiz")
+
   poparameters = {
     answer: @answer,
     token: "dc574bf8a22d1adceb04e8f6c4fefc5d",
