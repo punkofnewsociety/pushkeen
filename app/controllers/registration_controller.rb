@@ -40,7 +40,7 @@ class RegistrationController < ApplicationController
 
   poparameters = {
     answer: @answer,
-    token: "dc574bf8a22d1adceb04e8f6c4fefc5d",
+    token: 'dc574bf8a22d1adceb04e8f6c4fefc5d',
     task_id:  @id
   }
   #render json: {answer: @answer} 
