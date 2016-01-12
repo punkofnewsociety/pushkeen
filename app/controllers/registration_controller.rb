@@ -57,13 +57,18 @@ class RegistrationController < ApplicationController
     puts st[1]
     
     p = Str.find_by("text LIKE ?", "%#{st[1]}%").text.gsub(/(.*?)#{st[1]}/){@answer = $1.strip}
-    i=0
-    a=String.new
-      while      !!@answer.reverse![i].downcase! do
-       a = a + @answer[i]
-       i+=1
-      end
-    @answer=a
+    p = @answer.split(' ')
+      p p
+      p @answer = p[p.size-1].to_s
+    elsif @question.index("%") == @question.size-1 then
+      st = @question.split('%WORD%')
+    puts st[0]
+    
+    p = Str.find_by("text LIKE ?", "%#{st[0]}%").text.gsub(/(.*?)#{st[0]}/){@answer = $1.strip}
+    p = @answer.split(' ')
+      p p
+      p @answer = p[0].to_s
+      
     else
     st = @question.split(' %WORD% ')
     #p = Str.find_by("text LIKE ?", "%#{st[0]}%" "%#{st[1]}%").text.gsub(/#{st[0]}(.*?)#{st[1]}/){@answer = $1.strip}
@@ -74,7 +79,7 @@ class RegistrationController < ApplicationController
      xxx=leftstr.delete("")
      p leftstr
     puts "123"
-     rightstr=p.partition(' '+st[1])
+     rightstr=p.partition(' '   +st[1])
      p rightstr
     top=rightstr[0].delete(leftstr[0])
     p top
